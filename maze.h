@@ -32,19 +32,19 @@ typedef struct __Maze
 
 /**
  * @brief Initialise a maze object - allocate memory and set attributes
- * @param this pointer to the maze to be initialised
+ * @param maze pointer to the maze to be initialised
  * @param height height to allocate
  * @param width width to allocate
  * @return int 0 on success, 1 on fail  // 返回1？？？？？？？
  */
-int create_maze(maze *this, int height, int width);
+int create_maze(maze *maze, int height, int width);
 
 /**
  * @brief Free the memory allocated to the maze struct
  *
- * @param this the pointer to the struct to free
+ * @param maze the pointer to the struct to free
  */
-void free_maze(maze *this);
+void free_maze(maze *maze);
 
 /**
  * @brief Validate and return the width of the mazefile
@@ -65,40 +65,40 @@ int get_height(FILE *file);
 /**
  * @brief read in a maze file into a struct
  *
- * @param this Maze struct to be used
+ * @param maze Maze struct to be used
  * @param file Maze file pointer
  * @return int 0 on success, 1 on fail
  */
-int read_maze(maze *this, FILE *file);
+int read_maze(maze *maze, FILE *file);
 
 /**
  * @brief Prints the maze out - code provided to ensure correct formatting
  *
- * @param this pointer to maze to print
+ * @param maze pointer to maze to print
  * @param player the current player location
  */
-void print_maze(maze *this, coord *player);
+void print_maze(maze *maze, coord *player);
 
 void player_location(coord *player);
 
-int is_wall(maze *this, coord *player);
+int is_wall(maze *maze, coord *player);
 
 /**
  * @brief Validates and performs a movement in a given direction
  *
- * @param this Maze struct
+ * @param maze Maze struct
  * @param player The player's current position
  * @param direction The desired direction to move in
  */
-int move(maze *this, coord *player, char direction);
+int move(maze *maze, coord *player, char direction);
 
 /**
  * @brief Check whether the player has won and return a pseudo-boolean
  *
- * @param this current maze
+ * @param maze current maze
  * @param player player position
  * @return int 0 for false, 1 for true
  */
-int has_won(maze *this, coord *player);
+int has_won(maze *maze, coord *player);
 
 #endif
