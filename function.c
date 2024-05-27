@@ -5,7 +5,7 @@
  * @param maze pointer to the maze to be initialised
  * @param height height to allocate
  * @param width width to allocate
- * @return int 0 on success, 1 on fail  // 返回1？？？？？？？
+ * @return int 0 on success, 1 on fail
  */
 int create_maze(maze *maze, int height, int width)
 {
